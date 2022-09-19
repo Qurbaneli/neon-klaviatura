@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/20081ac52e.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <title> Klavaiatura</title>
+
+  <style>
+
+
+*
+{
+    margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+}
+
+body {
+     font-family: 'Poppins', sans-serif;   
+      background-size: cover;
+      height:100vh;
+      background-repeat: no-repeat;
+      background: rgb(0, 0, 0);
+    }
+
+  .container
+  {
+    width:1000px;
+    margin:0 auto;
+  } 
+
+  #klaviatura
+
+  {
+    border:2px solid #2ecc71;
+    border-radius: 5px;
+    margin-top:20px;
+  }
+
+  #result
+  {
+    height:250px;
+    color:#2ecc71;
+    margin: 20px 20px;
+    border: 2px solid #2ecc71;
+    border-radius: 5px;
+    font-size: 25px;
+    padding:10px;
+    overflow:auto;
+  }
+  #klaviatura .row
+
+{
+  display: flex;
+  justify-content: space-between;
+  margin:10px 20px;
+}
+  
+  .button
+  {
+   color:#2ecc71;
+   border:2px solid #2ecc71;
+    font-size:18px;
+    padding:18px 32px;
+    border-radius:10px;
+    margin-right: 5px;
+    font-weight: 400;
+  }
+
+  .button-space
+  {
+    width:500px;
+    text-align: center;
+    margin:0 auto;
+  }
+  </style>
+</head>
+
+
+<div class="container">
+
+  <div id="klaviatura">
+<div id="result">
+
+
+</div>
+
+  <div class="row">
+
+    <span class="button button-nums">
+      1
+    </span>
+    <span class="button button-nums">
+      2
+    </span>
+    <span class="button button-nums">
+      3
+    </span>
+    <span class="button button-nums">
+      4
+    </span>
+    <span class="button button-nums">
+      5
+    </span>
+    <span class="button button-nums">
+      6
+    </span>
+    <span class="button button-nums">
+      7
+    </span>
+    <span class="button button-nums">
+      8
+    </span>
+    <span class="button button-nums">
+      9
+    </span>
+    <span class="button button-nums">
+      0
+    </span>
+    <span class="button button-backspace">
+      <i class="fas fa-backspace"></i>
+    </span>
+
+  </div>
+  
+  <div class="row">
+
+    <span class="button button-char">
+      q
+    </span>
+
+    <span class="button button-char">
+      w
+    </span>
+    <span class="button button-char">
+      e
+    </span>
+    <span class="button button-char">
+      r
+    </span>
+    <span class="button button-char">
+      t
+    </span>
+    <span class="button button-char">
+      y
+    </span>
+    <span class="button button-char">
+      u
+    </span>
+    <span class="button button-char">
+      i
+    </span>
+    <span class="button button-char">
+      o
+    </span>
+    <span class="button button-char">
+      p
+    </span>
+
+  </div>
+
+
+  <div class="row">
+    <span class="button button-uppercase">
+      <i class="fas fa-chevron-up"></i>
+    </span>
+   
+    <span class="button button-char">
+      a
+    </span>
+    <span class="button button-char">
+      s
+    </span>
+    <span class="button button-char">
+      d
+    </span>
+    <span class="button button-char">
+      f
+    </span>
+    <span class="button button-char">
+      g
+    </span>
+    <span class="button button-char">
+      h
+    </span>
+    <span class="button button-char">
+      j
+    </span>
+    <span class="button button-char">
+      k
+    </span>
+    <span class="button button-char">
+      l
+    </span>
+    <span class="button button-enter">
+      <i class="fas fa-long-arrow-alt-left"></i>
+    </span>
+
+  </div>
+
+  <div class="row">
+
+    <span class="button button-char">
+      z
+    </span>
+    <span class="button button-char">
+      x
+    </span>
+    <span class="button button-char">
+      c
+    </span>
+    <span class="button button-char">
+      v
+    </span>
+    <span class="button button-char">
+      b
+    </span>
+    <span class="button button-char">
+      n
+    </span>
+    <span class="button button-char">
+      m
+    </span>
+    <span class="button button-char">
+      ,
+    </span>
+    <span class="button button-char">
+      .
+    </span>
+    <span class="button button-char">
+      ?
+    </span>
+  </div>
+
+  <div class="row">
+    <span class="button button-space">
+      Space
+    </span>
+  </div>
+
+</div>
+
+</div>
+
+<body>
+
+  <script>
+    
+    let result=document.querySelector("#result");
+
+    let nums=document.querySelectorAll(".button-nums");
+    let chars=document.querySelectorAll(".button-char");
+
+    let enter=document.querySelector(".button-enter");
+    let uppercase=document.querySelector(".button-uppercase");
+    let backspace=document.querySelector(".button-backspace");
+    let space=document.querySelector(".button-space");
+  console.log(enter);
+
+
+  nums.forEach(e => {
+    e.addEventListener("click", () => {
+        result.innerText += e.innerText;
+    });
+});
+
+
+chars.forEach(e => {
+  e.addEventListener("click",() =>
+  {
+    result.innerText += e.innerText;
+  });
+
+});
+
+backspace.addEventListener("click",() =>
+{
+
+  let len = result.innerText.length
+    result.innerText = result.innerText.substring(0, len-1);
+});
+
+enter.addEventListener("click",() =>
+{
+  
+  result.innerHTML+="<br>";
+});
+
+
+space.addEventListener("click",() =>
+{
+  result.innerHTML+= "&nbsp";
+  
+});
+
+
+uppercase.addEventListener("click",() =>
+{
+  
+  chars.forEach(e => {
+ 
+    e.style.textTransform = "uppercase";
+});
+  
+  
+});
+
+
+
+  </script>
+
+</body>
+
+</html>
